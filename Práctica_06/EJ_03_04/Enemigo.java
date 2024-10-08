@@ -1,4 +1,4 @@
-package inventario;
+package EJ_03_04;
 
 public class Enemigo extends NPC {
     private String tipo;  // Atributo tipo para el enemigo

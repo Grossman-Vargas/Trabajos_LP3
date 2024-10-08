@@ -1,4 +1,4 @@
-package inventario;
+package EJ_03_04;
 
 // Clase hija Pocion
 public class Pocion extends Item {

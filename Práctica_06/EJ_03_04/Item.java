@@ -1,4 +1,4 @@
-package inventario;
+package EJ_03_04;
 
 public class Item {
     private String name;

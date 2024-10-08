@@ -1,4 +1,4 @@
-package inventario;
+package EJ_03_04;
 import java.util.*;
 
 public class VistaInventario {

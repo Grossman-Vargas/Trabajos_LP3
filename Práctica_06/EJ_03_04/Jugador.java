@@ -1,4 +1,4 @@
-package inventario;
+package EJ_03_04;
 
 public class Jugador extends NPC {
     private int experiencia;  // Atributo de experiencia

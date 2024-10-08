@@ -1,4 +1,4 @@
-package inventario;
+package EJ_03_04;
 
 // Clase hija Arma
 public class Arma extends Item {
