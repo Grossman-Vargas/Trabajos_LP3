@@ -31,6 +31,28 @@ public class Jugador extends Entity {
         }
     }
 
+    public void agregar_Weapon(Weapon arma){
+        if (arma == null) {
+            System.out.println("Se adhirio un nueva arma:\n" + arma);
+        } else {
+            System.out.println("El arma actual fue reemplazada -");
+            inventario.agregarInventario(this.arma);
+        }
+        this.arma = arma;
+        inventario.eliminarInventario(arma);
+    }
+
+    public void quitar_Weapon(){
+        if(arma == null){
+            System.out.println("Arma en nulo");
+        } else {
+
+            inventario.agregarInventario(arma);
+            this.arma = null;
+
+        }
+    }
+
     public InventarioJug getInventario() {
         return inventario;
     }
