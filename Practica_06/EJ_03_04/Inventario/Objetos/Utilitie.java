@@ -1,10 +1,31 @@
 
 package Inventario.Objetos;
+import java.util.Random;
 
-public interface Utilitie {
+public class Utilitie {
 
-    public double get_DMG();
-    public double get_HEAL();
-    public String get_name();
+    protected String name;
+
+
+    public Utilitie(String name) {
+
+        this.name = name;
+
+    }
+
+    public String get_name(){
+        return this.name;
+    }
+
+    public void usar(){
+        System.out.println("Usas " + this.name + " pero no paso nada :v .");
+    }
+
+    @Override
+    public String toString() {
+
+        return String.format("Objeto sin utilidad xd.");
+
+    }
 
 }

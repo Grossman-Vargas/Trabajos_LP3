@@ -1,7 +1,7 @@
 
 package Inventario.Objetos;
 
-public class Hechizo implements Utilitie {
+public class Hechizo extends Utilitie {
 
     protected boolean heal;
     protected double heal_stat;
@@ -9,7 +9,7 @@ public class Hechizo implements Utilitie {
     protected String name;
 
     public Hechizo(String name, boolean heal, double stat) {
-        this.name = name;
+        super(name);
         this.heal = heal;
 
         if (this.heal){
@@ -20,19 +20,12 @@ public class Hechizo implements Utilitie {
 
     }
 
-    @Override
-    public String get_name(){
-        return this.name;
-    }
-
-    @Override
-    public double get_DMG(){
-        return this.dmg_stat;
-    }
-
-    @Override
-    public double get_HEAL(){
-        return this.heal_stat;
+    public double get_stat(){
+        if (this.heal){
+            return this.heal_stat;
+        } else {
+            return this.dmg_stat;
+        }
     }
 
     @Override

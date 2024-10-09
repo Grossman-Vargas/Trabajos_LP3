@@ -1,11 +1,13 @@
+package Entidades;
+
 import Inventario.Objetos.Weapon;
 
-public class Enemigo extends NPC {
+public class Enemigo implements Entity {
     private String tipo;  // Atributo tipo para el enemigo
 
     // Constructor
     public Enemigo(String name, double salud, int nivel, String tipo) {
-        super(name, salud, nivel);  // Llama al constructor de NPC
+        super(name, salud, nivel);  // Llama al constructor de Entidades.NPC
         this.tipo = tipo;
     }
 
