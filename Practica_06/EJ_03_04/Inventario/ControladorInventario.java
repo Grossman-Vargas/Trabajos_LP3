@@ -1,3 +1,6 @@
+package Inventario;
+
+import Inventario.Objetos.Utilitie;
 
 import java.util.List;
 
@@ -10,7 +13,7 @@ public class ControladorInventario {
         this.view=view;
     }
 
-    public void AgregarItem(Item it){
+    public void AgregarItem(Utilitie it){
         if(it == null){
             view.MostrarMensaje("La informacion del item no es correcta");
         }else{
@@ -29,7 +32,7 @@ public class ControladorInventario {
     }
 
     public void VerInventario(){
-        List<Item> items = mod.getItems();
+        List<Utilitie> items = mod.getItems();
         view.Mostrarinventario(items);
     }
 
@@ -37,9 +40,9 @@ public class ControladorInventario {
         view.MostrarDetalles(mod.getItems());
     }
 
-    public Item BuscarItem(){
+    public Utilitie BuscarItem(){
         String tempM;
-        Item tempI;
+        Utilitie tempI;
         view.MostrarMensaje("Que esta buscando?");
         tempM=view.Buscar();
         try{
@@ -56,7 +59,7 @@ public class ControladorInventario {
         
     }
 
-    public void UsarItem(Item It){
+    public void UsarItem(Utilitie It){
         if(mod.usaritem(It)){
             view.MostrarMensaje("El item fue usado");
         }else{

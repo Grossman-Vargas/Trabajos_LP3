@@ -20,7 +20,7 @@ public class Jugador extends NPC {
     // Implementación del método atacar (si quieres modificar el comportamiento en Jugador)
     @Override
     public double atacar() {
-        return arma.getDamage() + (experiencia * 0.1);  // El daño aumenta según la experiencia
+        return weapon.getDamage() + (experiencia * 0.1);  // El daño aumenta según la experiencia
     }
 
     // Implementación del método recibirDaño

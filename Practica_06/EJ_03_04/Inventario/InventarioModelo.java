@@ -1,14 +1,20 @@
+package Inventario;
+
+import Inventario.Objetos.Weapon;
+import Inventario.Objetos.Utilitie;
+
 import java.util.*;
+
 public class InventarioModelo {
-    private List<Item> items;
+    private List<Utilitie> items;
 
     public InventarioModelo(){
         items= new ArrayList<>();
 
     }
 
-    public void AgregarItem(Item ite){
-        for(Item i: items){
+    public void AgregarItem(Utilitie ite){
+        for(Utilitie i: items){
             if(i.getName().equals(ite.getName())){
                 i.setCantidad(i.getCantidad()+1);
             }else{
@@ -18,15 +24,15 @@ public class InventarioModelo {
         
     }
 
-    public List<Item> getItems(){
+    public List<Utilitie> getItems(){
         return items;
     }
 
     public boolean EliminarItem(String temp) {
-        Iterator<Item> iterator = items.iterator();
+        Iterator<Utilitie> iterator = items.iterator();
 
         while (iterator.hasNext()) {
-            Item i = iterator.next();
+            Utilitie i = iterator.next();
             
             if (temp.equals(i.getName())) {
                 i.setCantidad(i.getCantidad() - 1);
@@ -43,8 +49,8 @@ public class InventarioModelo {
     }
     
 
-    public boolean usaritem(Item it) {
-        if (it instanceof Arma) { 
+    public boolean usaritem(Utilitie it) {
+        if (it instanceof Weapon) {
             return false;
         } else if (it.getCantidad() <= 0) {
             return false;
@@ -54,9 +60,9 @@ public class InventarioModelo {
         }
     }
 
-    public Item obtenerItem(String nombre) {
+    public Utilitie obtenerItem(String nombre) {
         int index = 0;
-        for (Item i : items) {
+        for (Utilitie i : items) {
             if (nombre.equals(i.getName())) {
                 return items.get(index);
             }

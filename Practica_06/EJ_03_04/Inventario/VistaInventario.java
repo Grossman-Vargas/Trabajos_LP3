@@ -1,3 +1,7 @@
+package Inventario;
+
+import Inventario.Objetos.Utilitie;
+
 import java.util.*;
 
 public class VistaInventario {
@@ -6,8 +10,8 @@ public class VistaInventario {
         sc =new Scanner(System.in);
     }
 
-    public void Mostrarinventario(List<Item>it){
-        for(Item i :it){
+    public void Mostrarinventario(List<Utilitie>it){
+        for(Utilitie i :it){
             System.out.println(i.getName());
         }
     }
@@ -20,8 +24,8 @@ public class VistaInventario {
         System.out.println(mensaje);
     }
 
-    public void MostrarDetalles(List<Item>it){
-        for(Item i :it){
+    public void MostrarDetalles(List<Utilitie>it){
+        for(Utilitie i :it){
             System.out.println(i);
         }
     }

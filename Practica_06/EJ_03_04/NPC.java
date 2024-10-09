@@ -1,8 +1,10 @@
+import Inventario.Objetos.Weapon;
+
 public class NPC {
     protected String name;
     protected double salud;
     protected int nivel;
-    protected Arma arma;  // Agregado el atributo arma
+    protected Weapon weapon;  // Agregado el atributo arma
 
     // Constructor
     public NPC(String name, double salud, int nivel) {
@@ -36,16 +38,16 @@ public class NPC {
         this.nivel = nivel;
     }
 
-    public Arma getArma() {   // Getter para el atributo arma
-        return arma;
+    public Weapon getArma() {   // Getter para el atributo arma
+        return weapon;
     }
 
-    public void setArma(Arma arma) {   // Setter para el atributo arma
-        this.arma = arma;
+    public void setArma(Weapon weapon) {   // Setter para el atributo arma
+        this.weapon = weapon;
     }
 
     public double atacar() {
-        return arma.getDamage();
+        return weapon.getDamage();
     }
     public void recibirDaño(NPC enemy){
         salud= salud - enemy.atacar();

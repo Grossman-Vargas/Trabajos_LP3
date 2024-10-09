@@ -1,3 +1,5 @@
+import Inventario.Objetos.Weapon;
+
 public class Enemigo extends NPC {
     private String tipo;  // Atributo tipo para el enemigo
 
@@ -19,11 +21,11 @@ public class Enemigo extends NPC {
     // Implementación del método atacar
     @Override
     public double atacar() {
-        return arma.getDamage() + (nivel * 0.2);  // Daño incrementado según el nivel del enemigo
+        return weapon.getDamage() + (nivel * 0.2);  // Daño incrementado según el nivel del enemigo
     }
 
-    public Arma drop(){
-        return arma;
+    public Weapon drop(){
+        return weapon;
     }
 
     public int death(){
