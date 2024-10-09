@@ -1,42 +1,34 @@
-package Entidades;
 
+package Entidades;
+import Inventario.Objetos.Utilitie;
 import Inventario.Objetos.Weapon;
 
-public class Enemigo implements Entity {
-    private String tipo;  // Atributo tipo para el enemigo
+import java.util.ArrayList;
+import java.util.List;
 
-    // Constructor
-    public Enemigo(String name, double salud, int nivel, String tipo) {
-        super(name, salud, nivel);  // Llama al constructor de Entidades.NPC
-        this.tipo = tipo;
+public class Enemigo extends Entity {
+    protected String nombre;
+    protected int vida;
+    protected int nivel;
+    protected Weapon arma;
+
+    public Enemigo(String name, double salud, int nivel) {
+        super(name, salud, nivel);
+        this.arma = null;
     }
 
-    // Getter y setter para tipo
-    public String getTipo() {
-        return tipo;
+    public void atacar(Entity e1) {
+        if (arma == null) {
+            System.out.println("Se realizo un ataque de " + nivel * 035);
+            e1.recibirDMG(nivel * 0.5);
+            e1.isAlive();
+        } else {
+            e1.recibirDMG(arma.get_DMG());
+            e1.isAlive();
+        }
     }
 
-    public void setTipo(String tipo) {
-        this.tipo = tipo;
-    }
-
-    // Implementación del método atacar
-    @Override
-    public double atacar() {
-        return weapon.getDamage() + (nivel * 0.2);  // Daño incrementado según el nivel del enemigo
-    }
-
-    public Weapon drop(){
-        return weapon;
-    }
-
-    public int death(){
-        return 100*nivel;
-    }
-
-    // Implementación del método recibirDaño
-    @Override
-    public void recibirDaño(NPC enemigo) {
-        salud = salud - enemigo.atacar();
-    }
 }
+
+
+

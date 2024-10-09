@@ -22,4 +22,19 @@ public class Entity {
         this.salud -= DMG;
     }
 
+    public void isAlive() {
+
+        if (salud <= 0) {
+
+            System.out.println("El jugador " + name + " ha muerto.");
+            System.exit(0);
+
+        } else {
+
+            System.out.println("Vida actual del jugador " + name + " -> " + salud);
+
+        }
+
+    }
+
 }
