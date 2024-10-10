@@ -10,7 +10,7 @@ public class InventarioJug {
     protected List<Utilitie> inventario = new ArrayList();
 
     public void agregarInventario(Utilitie elemento) {
-        System.out.println("Se agregó al inventario:\n " + elemento);
+        System.out.println("\nSe agregó al inventario:\n " + elemento);
         this.inventario.add(elemento);
     }
 

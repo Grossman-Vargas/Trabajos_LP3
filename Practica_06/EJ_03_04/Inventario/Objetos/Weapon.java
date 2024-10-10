@@ -10,9 +10,8 @@ public class Weapon extends Utilitie {
     protected double dmg_stat;
     Random rand = new Random();
 
-    public Weapon(String name, String name1, double dmg_stat, boolean is_legendary) {
+    public Weapon(String name, double dmg_stat, boolean is_legendary) {
         super(name);
-        this.name = name1;
         this.dmg_stat = dmg_stat;
         this.is_legendary = is_legendary;
     }
@@ -26,11 +25,10 @@ public class Weapon extends Utilitie {
 
     @Override
     public String toString() {
-
-        return String.format("Nombre del arma -> %s\n ", name,
-                (is_legendary ? "Es legendaria (daño incrementado) -> " : "NO Es legendaria -> "),
-                (get_DMG()));
-
+        String legendario = is_legendary ? "Es legendaria (daño incrementado) -> " : "NO Es legendaria -> ";
+        String name = super.toString();
+        return "Nombre del arma -> " + name + "\n" + legendario + get_DMG();
     }
+
 
 }

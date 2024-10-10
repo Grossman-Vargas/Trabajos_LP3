@@ -11,7 +11,7 @@ public class Jugador extends Entity {
     protected String nombre;
     protected int vida;
     protected int nivel;
-    protected InventarioJug inventario;
+    protected InventarioJug inventario = new InventarioJug();
     //protected List<Utilitie> inventario = new ArrayList<>();
     protected Weapon arma;
 
@@ -22,13 +22,17 @@ public class Jugador extends Entity {
 
     public void atacar(Entity e1) {
         if (arma == null) {
-            System.out.println("Se realizo un ataque de " + nivel * 035);
-            e1.recibirDMG(nivel * 0.5);
+            System.out.println("Se realizo un ataque de " + super.nivel * 10);
+            e1.recibirDMG(super.nivel * 10);
             e1.isAlive();
         } else {
             e1.recibirDMG(arma.get_DMG());
             e1.isAlive();
         }
+    }
+
+    public int get_vida(){
+        return vida;
     }
 
     public void agregar_Weapon(Weapon arma){
@@ -55,6 +59,10 @@ public class Jugador extends Entity {
 
     public InventarioJug getInventario() {
         return inventario;
+    }
+
+    public void curarse(int stat){
+        this.salud += stat;
     }
 
 }

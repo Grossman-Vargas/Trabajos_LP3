@@ -1,6 +1,5 @@
 
 package Inventario.Objetos;
-import java.util.Random;
 
 public class Utilitie {
 
@@ -21,10 +20,11 @@ public class Utilitie {
         System.out.println("Usas " + this.name + " pero no paso nada :v .");
     }
 
+
     @Override
     public String toString() {
 
-        return String.format("Objeto sin utilidad xd.");
+        return this.name;
 
     }
 

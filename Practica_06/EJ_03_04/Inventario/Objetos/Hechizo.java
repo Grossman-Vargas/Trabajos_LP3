@@ -4,11 +4,11 @@ package Inventario.Objetos;
 public class Hechizo extends Utilitie {
 
     protected boolean heal;
-    protected double heal_stat;
-    protected double dmg_stat;
+    protected int heal_stat;
+    protected int dmg_stat;
     protected String name;
 
-    public Hechizo(String name, boolean heal, double stat) {
+    public Hechizo(String name, boolean heal, int stat) {
         super(name);
         this.heal = heal;
 
@@ -20,7 +20,11 @@ public class Hechizo extends Utilitie {
 
     }
 
-    public double get_stat(){
+    public boolean tipo(){
+        return heal;
+    }
+
+    public int get_stat(){
         if (this.heal){
             return this.heal_stat;
         } else {
@@ -30,11 +34,11 @@ public class Hechizo extends Utilitie {
 
     @Override
     public String toString() {
-
-        return String.format("Nombre del hechizo -> %s\n ", name,
-                            (heal ? "Curación -> " : "Daño -> "),
-                            (heal ? heal_stat : dmg_stat));
-
+        String tipo = heal ? "Curación -> " : "Daño -> ";
+        double stat = heal ? heal_stat : dmg_stat;
+        String nombre = super.toString();
+        return "Nombre del hechizo -> " + nombre + "\n" + tipo + stat;
     }
+
 
 }

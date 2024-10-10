@@ -10,6 +10,7 @@ public class InventarioMenu {
     public void agregar_funcion(String opcion){
         if (opcion != null || opcion.trim() != "" ){
             menu += "\n" +cont + ".- " + opcion;
+            cont++;
         } else {
             System.out.println("No se pudo agregar la opcion");
         }
